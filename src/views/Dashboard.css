@@ -1,0 +1,61 @@
+.card-body {
+  background: transparent;
+}
+.card-body:first-child {
+  background-size: cover;
+}
+
+.bg-gradient-info {
+  border-radius: 0.5rem !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#90caf9),
+    color-stop(99%, #047edf)
+  );
+  background: linear-gradient(90deg, #90caf9, #047edf 99%);
+}
+.bg-gradient-danger {
+  border-radius: 0.5rem !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ffbf96),
+    to(#fe7096)
+  );
+  background: linear-gradient(90deg, #ffbf96, #fe7096);
+}
+.bg-gradient-success {
+  border-radius: 0.5rem !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#84d9d2),
+    to(#07cdae)
+  );
+  background: linear-gradient(90deg, #84d9d2, #07cdae);
+}
+.card-img-holder {
+  position: relative;
+}
+.card-img-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.ct-series-c .ct-slice-pie,
+.ct-series-c .ct-area {
+  fill: #fe7096 !important;
+}
+.ct-series-b .ct-slice-pie,
+.ct-series-b .ct-area {
+  fill: #07cdae !important;
+}
+.ct-series-a .ct-slice-pie,
+.ct-series-a .ct-area {
+  fill: #90caf9 !important;
+}
