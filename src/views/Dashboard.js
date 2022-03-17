@@ -14,7 +14,7 @@ function Dashboard() {
         <div>
           <div className="page-header">
             <h3 className="page-title">
-              <span className="page-title-icon bg-gradient-primary text-white mr-2">
+              <span className="page-title-icon bg-gradient-primary  mr-2">
                 <i className="mdi mdi-home"></i>
               </span>{" "}
               Dashboard{" "}
@@ -22,7 +22,7 @@ function Dashboard() {
           </div>
           <div className="row">
             <div className="col-md-4 stretch-card grid-margin">
-              <div className="card bg-gradient-danger card-img-holder text-white">
+              <div className="card bg-gradient-danger card-img-holder ">
                 <div className="card-body">
                   {/*   <img
                   src={require("../../assets/images/dashboard/circle.svg")}
@@ -44,7 +44,7 @@ function Dashboard() {
               </div>
             </div>
             <div className="col-md-4 stretch-card grid-margin">
-              <div className="card bg-gradient-info card-img-holder text-white">
+              <div className="card bg-gradient-info card-img-holder ">
                 <div className="card-body">
                   {/*  <img
                   src={require("../../assets/images/dashboard/circle.svg")}
@@ -66,7 +66,7 @@ function Dashboard() {
               </div>
             </div>
             <div className="col-md-4 stretch-card grid-margin">
-              <div className="card bg-gradient-success card-img-holder text-white">
+              <div className="card bg-gradient-success card-img-holder ">
                 <div className="card-body">
                   {/*  <img
                     src="../../assets/images/dashboard/circle.svg"

@@ -24,7 +24,13 @@ export const getProductsAction = () => {
   return async (dispatch) => {
     try {
       const resp = await fetch(
-        "https://my-database-ytrs.herokuapp.com/recipes"
+        /* "https://my-database-ytrs.herokuapp.com/recipes" */
+        "http://localhost:3000/recipes/",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       if (resp.ok) {
         const food = await resp.json();

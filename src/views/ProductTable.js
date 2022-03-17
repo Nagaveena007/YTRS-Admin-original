@@ -68,19 +68,17 @@ const ProductTable = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {products.map((p, index) => {
-                      return (
-                        <tr key={index}>
-                          <td> {p.id} </td>
-                          <td>{p.name} </td>
-                          <td> {p.stock} </td>
-                          <td> {p.price} </td>
-                          <td>
-                            <CreateIcon />
-                            <DeleteIcon />
-                          </td>
-                        </tr>
-                      );
+                    {products.map((p, i) => {
+                      <tr key={i}>
+                        <td> {p.id} </td>
+                        <td>{p.name} </td>
+                        <td> {p.stock} </td>
+                        <td> {p.price} </td>
+                        <td>
+                          <CreateIcon />
+                          <DeleteIcon />
+                        </td>
+                      </tr>;
                     })}
                   </tbody>
                 </table>
