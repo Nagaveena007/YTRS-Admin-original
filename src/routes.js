@@ -37,6 +37,13 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
+    path: "/addProduct",
+    name: "Add Product ",
+    icon: "nc-icon nc-notes",
+    component: ProductEditForm,
+    layout: "/admin",
+  },
+  {
     path: "/Order-table",
     name: "Orders",
     icon: "nc-icon nc-notes",
@@ -44,7 +51,7 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/Product-Form",
+    path: "/editProduct",
     name: "Product Form",
     icon: "nc-icon nc-notes",
     component: ProductEditForm,

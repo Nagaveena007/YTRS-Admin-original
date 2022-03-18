@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
+import IngredientsAdd from "./IngredientsAdd";
 //import DatePicker from "react-datepicker";
 //import bsCustomFileInput from "bs-custom-file-input";
 
@@ -28,6 +29,15 @@ export class ProductEditForm extends Component {
               <div className="card-body">
                 <form className="forms-sample">
                   <Form.Group>
+                    <label htmlFor="exampleInputName1">Product Id</label>
+                    <Form.Control
+                      type="text"
+                      className="form-control"
+                      id="exampleInputName1"
+                      placeholder="id"
+                    />
+                  </Form.Group>
+                  <Form.Group>
                     <label htmlFor="exampleInputName1">Product Name</label>
                     <Form.Control
                       type="text"
@@ -37,26 +47,61 @@ export class ProductEditForm extends Component {
                     />
                   </Form.Group>
                   <Form.Group>
+                    <label htmlFor="exampleInputName1">Stock</label>
+                    <Form.Control
+                      type="number"
+                      className="form-control"
+                      id="exampleInputName1"
+                      placeholder="Stock"
+                    />
+                  </Form.Group>
+                  <Form.Group>
                     <label htmlFor="exampleInputEmail3">Price</label>
                     <Form.Control
                       type="number"
                       className="form-control"
                       id="exampleInputEmail3"
-                      placeholder="$"
+                      placeholder="€"
                     />
                   </Form.Group>
+                  <Form.Group>
+                    <label htmlFor="exampleInputEmail3">Cooking Time</label>
+                    <Form.Control
+                      type="number"
+                      className="form-control"
+                      id="exampleInputEmail3"
+                      placeholder="min"
+                    />
+                  </Form.Group>
+                  <IngredientsAdd />
 
                   <Form.Group>
-                    <label htmlFor="exampleSelectGender">Choose category</label>
-                    <select className="form-control" id="exampleSelectGender">
-                      <option>Choose category</option>
-                      <option>Electronics</option>
-                      <option>Cloathing</option>
-                      <option>Mobiles</option>
-                    </select>
+                    <label htmlFor="exampleInputCity1">Image URL</label>
+                    <Form.Control
+                      type="number"
+                      className="form-control"
+                      id="exampleInputCity1"
+                      placeholder="Location"
+                    />
                   </Form.Group>
                   <Form.Group>
-                    {/*  <label>File upload</label> */}
+                    <label htmlFor="exampleInputCity1">Video URL</label>
+                    <Form.Control
+                      type="number"
+                      className="form-control"
+                      id="exampleInputCity1"
+                      placeholder="Location"
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <label htmlFor="exampleTextarea1">Product Details</label>
+                    <textarea
+                      className="form-control"
+                      id="exampleTextarea1"
+                      rows="4"
+                    ></textarea>
+                  </Form.Group>
+                  <Form.Group>
                     <div
                       className="custom-file"
                       style={{
@@ -85,23 +130,6 @@ export class ProductEditForm extends Component {
                         Upload images
                       </label>
                     </div>
-                  </Form.Group>
-                  <Form.Group>
-                    <label htmlFor="exampleInputCity1">Stock</label>
-                    <Form.Control
-                      type="number"
-                      className="form-control"
-                      id="exampleInputCity1"
-                      placeholder="Location"
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    <label htmlFor="exampleTextarea1">Product Details</label>
-                    <textarea
-                      className="form-control"
-                      id="exampleTextarea1"
-                      rows="4"
-                    ></textarea>
                   </Form.Group>
                   <button
                     type="submit"

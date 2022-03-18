@@ -22,7 +22,7 @@ export const initialState = {
   },
 };
 const bigReducer = combineReducers({
-  recipes: productReducer,
+  products: productReducer,
   orders: orderReducer,
   users: userReducer,
 });

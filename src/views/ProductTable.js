@@ -43,7 +43,7 @@ import { getProductsAction } from "../redux/action";
 const ProductTable = () => {
   const products = useSelector((state) => state.products.productsList);
   const dispatch = useDispatch();
-
+  console.log("products", products);
   useEffect(() => {
     dispatch(getProductsAction());
   }, []);
@@ -69,16 +69,18 @@ const ProductTable = () => {
                   </thead>
                   <tbody>
                     {products.map((p, i) => {
-                      <tr key={i}>
-                        <td> {p.id} </td>
-                        <td>{p.name} </td>
-                        <td> {p.stock} </td>
-                        <td> {p.price} </td>
-                        <td>
-                          <CreateIcon />
-                          <DeleteIcon />
-                        </td>
-                      </tr>;
+                      return (
+                        <tr key={i}>
+                          <td> {p.id} </td>
+                          <td>{p.name} </td>
+                          <td> {p.stock} </td>
+                          <td> € {p.price} </td>
+                          <td>
+                            <CreateIcon className="mr-2" />
+                            <DeleteIcon className="ml-2" />
+                          </td>
+                        </tr>
+                      );
                     })}
                   </tbody>
                 </table>

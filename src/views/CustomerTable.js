@@ -88,7 +88,7 @@ export class CustomerTable extends Component {
                         <th> First name </th>
                         <th> password </th>
                         <th> email </th>
-                        <th> Progress</th>
+                        <th> Order Progress</th>
                       </tr>
                     </thead>
                     <tbody>
