@@ -43,18 +43,17 @@ const AddProduct = () => {
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
     const myForm = new FormData();
-    myForm.set("id", id);
-    myForm.set("name", name);
-    myForm.set("price", price);
-    myForm.set("Stock", stock);
-    myForm.set("cookingTime", cookingTime);
-    myForm.set("img", img);
-    myForm.set("url", url);
-    myForm.set("productDetails", productDetails);
-
-    dispatch(addProductsAction(myForm));
+    myForm.set("id", product.id);
+    myForm.set("name", product.name);
+    myForm.set("price", product.price);
+    myForm.set("Stock", product.stock);
+    myForm.set("cookingTime", product.cookingTime);
+    myForm.set("img", product.img);
+    myForm.set("url", product.url);
+    myForm.set("productDetails", product.productDetails);
+    console.log(myForm);
+    dispatch(addProductsAction(product));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(product);
@@ -104,7 +103,7 @@ const AddProduct = () => {
         <div className="col-12 grid-margin stretch-card">
           <div className="card">
             <div className="card-body">
-              <Form onSubmit={handleSubmit}>
+              <Form onSubmit={createProductSubmitHandler}>
                 <Form.Group>
                   <Form.Label> Product Id</Form.Label>
                   <Form.Control

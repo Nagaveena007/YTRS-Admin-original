@@ -22,7 +22,7 @@ const productReducer = (state = initialState.products, action) => {
     case ADD_PRODUCTS:
       return {
         ...state,
-        productsList: state.productsList.push(action.payload),
+        productsList: [...state.productsList, action.payload],
 
         /* ...state,
         productsList: [...state.productsList, action.payload], */

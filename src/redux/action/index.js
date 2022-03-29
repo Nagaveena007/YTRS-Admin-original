@@ -90,7 +90,6 @@ export const addProductsAction = (productData) => {
     try {
       const response = await fetch(
         `https://my-database-ytrs.herokuapp.com/recipes`,
-        productData,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
