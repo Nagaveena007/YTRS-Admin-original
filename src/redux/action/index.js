@@ -27,7 +27,6 @@ export const getProductsAction = () => {
   return async (dispatch) => {
     try {
       const resp = await fetch(
-        /*  "http://localhost:3000/recipes/",*/
         "https://my-database-ytrs.herokuapp.com/recipes",
         {
           headers: {
@@ -55,7 +54,7 @@ export const editProductsAction = async () => {
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(productsList),
+          /*  body: JSON.stringify(productsList), */
         }
       );
       if (response.ok) {
@@ -71,7 +70,33 @@ export const editProductsAction = async () => {
     }
   };
 };
-export const deleteProductsAction = () => {
+
+export const addProductsAction = async () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(
+        `https://my-database-ytrs.herokuapp.com/recipes/${id}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title: `POST request` }),
+        }
+      );
+      if (response.ok) {
+        const food = await response.json();
+        dispatch({
+          type: ADD_PRODUCTS,
+          payload: food,
+        });
+        alert("Successfully added new Product");
+      }
+    } catch (e) {
+      alert(e);
+    }
+  };
+};
+
+export const deleteProductsAction = (id) => {
   return async (dispatch) => {
     try {
       const resp = await fetch(

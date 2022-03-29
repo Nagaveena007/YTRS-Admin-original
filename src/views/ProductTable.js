@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { ProgressBar } from "react-bootstrap";
 import CreateIcon from "@material-ui/icons/Create";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { useParams } from "react-router-dom";
 
 import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { getProductsAction } from "../redux/action";
+import { deleteProductsAction } from "../redux/action";
 /* const productTable = [
   {
     productId: 12543,
@@ -43,6 +45,8 @@ import { getProductsAction } from "../redux/action";
 const ProductTable = () => {
   const products = useSelector((state) => state.products.productsList);
   const dispatch = useDispatch();
+  const params = useParams();
+
   console.log("products", products);
   useEffect(() => {
     dispatch(getProductsAction());
@@ -76,8 +80,15 @@ const ProductTable = () => {
                           <td> {p.stock} </td>
                           <td> € {p.price} </td>
                           <td>
-                            <CreateIcon className="mr-2" />
-                            <DeleteIcon className="ml-2" />
+                            <Link to={p.id}>
+                              <CreateIcon className="mr-2" />
+                            </Link>
+                            <DeleteIcon
+                              onClick={() =>
+                                dispatch(deleteProductsAction(p.id))
+                              }
+                              className="ml-2"
+                            />
                           </td>
                         </tr>
                       );

@@ -1,10 +1,10 @@
 import Dashboard from "views/Dashboard.js";
 import UserProfile from "views/UserProfile.js";
 
-import ProductTable from "views/ProductTable";
+//import ProductTable from "views/ProductTable";
 import CustomerTable from "views/CustomerTable";
 import OrderTable from "views/OrderTable";
-import ProductEditForm from "views/ProductEditForm";
+//import ProductEditForm from "views/ProductEditForm";
 
 const dashboardRoutes = [
   {
@@ -29,20 +29,20 @@ const dashboardRoutes = [
     component: CustomerTable,
     layout: "/admin",
   },
-  {
+  /*  {
     path: "/product-table",
     name: "Products",
     icon: "nc-icon nc-notes",
     component: ProductTable,
     layout: "/admin",
-  },
-  {
+  }, */
+  /*  {
     path: "/addProduct",
     name: "Add Product ",
     icon: "nc-icon nc-notes",
     component: ProductEditForm,
     layout: "/admin",
-  },
+  }, */
   {
     path: "/Order-table",
     name: "Orders",
@@ -50,13 +50,13 @@ const dashboardRoutes = [
     component: OrderTable,
     layout: "/admin",
   },
-  {
+  /*   {
     path: "/editProduct",
     name: "Product Form",
     icon: "nc-icon nc-notes",
     component: ProductEditForm,
     layout: "/admin",
-  },
+  }, */
 ];
 
 export default dashboardRoutes;
