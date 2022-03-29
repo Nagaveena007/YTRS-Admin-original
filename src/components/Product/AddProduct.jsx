@@ -11,6 +11,7 @@ import { useAlert } from "react-alert";
 
 const AddProduct = () => {
   const params = useParams();
+  const dispatch = useDispatch();
   // const alert = useAlert();
 
   const [product, setProduct] = useState({
@@ -29,20 +30,11 @@ const AddProduct = () => {
       [fieldName]: value,
     });
   };
-
-  const [id, setId] = useState(null);
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState(null);
-  const [stock, setStock] = useState(null);
-  const [cookingTime, setCookingTime] = useState("");
-  const [img, setImages] = useState([]);
-  const [url, setVideos] = useState([]);
-  const [productDetails, setProductDetails] = useState("");
-  const dispatch = useDispatch();
-
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
-    const myForm = new FormData();
+    dispatch(addProductsAction(product));
+
+    /*  const myForm = new FormData();
     myForm.set("id", product.id);
     myForm.set("name", product.name);
     myForm.set("price", product.price);
@@ -50,11 +42,10 @@ const AddProduct = () => {
     myForm.set("cookingTime", product.cookingTime);
     myForm.set("img", product.img);
     myForm.set("url", product.url);
-    myForm.set("productDetails", product.productDetails);
-    console.log(myForm);
-    dispatch(addProductsAction(product));
+    myForm.set("productDetails", product.productDetails); */
+    // console.log(myForm);
   };
-  const handleSubmit = async (e) => {
+  /*  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(product);
     try {
@@ -72,10 +63,10 @@ const AddProduct = () => {
       if (response.ok) {
         alert("Product Created Successfully");
 
-        /*  <Alert severity="success">
+        <Alert severity="success">
           <AlertTitle>Success</AlertTitle>
           successfully added an product — <strong>check it out!</strong>
-        </Alert>; */
+        </Alert>;
         setProduct({
           id: null,
           name: "",
@@ -92,7 +83,7 @@ const AddProduct = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; */
 
   return (
     <div>
@@ -147,7 +138,7 @@ const AddProduct = () => {
                     placeholder="Stock"
                     value={product.stock}
                     onChange={(e) => {
-                      handleInput("Stock", e.target.value);
+                      handleInput("stock", e.target.value);
                     }}
                     required
                   />
