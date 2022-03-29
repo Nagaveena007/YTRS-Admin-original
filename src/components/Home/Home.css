@@ -1,0 +1,20 @@
+.card-expand {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.home__wrap {
+  width: calc(111.9vw - 230px - 200px);
+  overflow-x: hidden;
+  scroll-behavior: unset;
+  position: absolute;
+  top: 200px;
+  left: 240px;
+  padding: 40px;
+}
+.home__wrap::-webkit-scrollbar {
+  display: none;
+}
+hr {
+  margin-top: 6px;
+}

@@ -1,10 +1,11 @@
+import { initialState } from "../store";
 import {
   GET_PRODUCTS,
   EDIT_PRODUCTS,
   DELETE_PRODUCTS,
   ADD_PRODUCTS,
+  GET_SINGLEPRODUCT,
 } from "../action";
-import { initialState } from "../store";
 
 const productReducer = (state = initialState.products, action) => {
   switch (action.type) {
@@ -13,11 +14,20 @@ const productReducer = (state = initialState.products, action) => {
         ...state,
         productsList: action.payload,
       };
+    /*   case GET_SINGLEPRODUCT:
+      return {
+        ...state,
+        productsList: state.recipesToBuy.add((id) => id == action.payload),
+      }; */
     case ADD_PRODUCTS:
       return {
         ...state,
-        productsList: state.productsList.concat(action.payload),
-        /*         return state.productsList.concat([action.data]);*/
+        productsList: state.productsList.push(action.payload),
+
+        /* ...state,
+        productsList: [...state.productsList, action.payload], */
+        /*  ...state,
+        productsList: state.productsList.concat(action.payload), */
       };
     case EDIT_PRODUCTS:
       return {

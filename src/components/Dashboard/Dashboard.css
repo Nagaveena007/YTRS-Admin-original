@@ -1,0 +1,109 @@
+.card-body {
+  background: transparent;
+}
+.card-body:first-child {
+  background-size: cover;
+}
+
+.bg-gradient-info {
+  border-radius: 0.5rem !important;
+  /*   background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#90caf9),
+    color-stop(99%, #047edf)
+  );
+  background: linear-gradient(90deg, #90caf9, #047edf 99%); */
+}
+.bg-gradient-danger {
+  border-radius: 0.5rem !important;
+  /*   background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ffbf96),
+    to(#fe7096)
+  );
+  background: linear-gradient(90deg, #ffbf96, #fe7096); */
+}
+.bg-gradient-success {
+  border-radius: 0.5rem !important;
+  /*   background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#84d9d2),
+    to(#07cdae)
+  );
+  background: linear-gradient(90deg, #84d9d2, #07cdae); */
+}
+.card-img-holder {
+  position: relative;
+}
+.card-img-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.orders {
+  color: rgb(14, 12, 12);
+  border-radius: 5px;
+}
+
+.ChartDoughnut {
+  display: flex;
+}
+.lineChart {
+  width: 60%;
+  margin: auto;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  box-sizing: border-box;
+}
+
+.doughnutChart {
+  width: 25vmax;
+  margin: auto;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    display: unset;
+  }
+
+  .dashboardContainer {
+    border-left: none;
+    padding: 0;
+  }
+
+  .dashboardSummary > div > p {
+    margin: 0;
+  }
+
+  .dashboardSummaryBox2 > a {
+    padding: 0.5rem;
+    margin: 1rem;
+    font: 300 0.9rem "Roboto";
+  }
+  .ChartDoughnut {
+    display: unset;
+  }
+  .lineChart {
+    width: 76%;
+    margin: auto;
+  }
+  .doughnutChart {
+    width: 40vmax;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
+}
