@@ -133,10 +133,10 @@ const Header = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <Link to={"/account"}>
+                <Link to={"/admin"}>
                   <StyledMenuItem>
                     <ListItemText
-                      primary="My Account"
+                      primary="Admin Profile"
                       style={{ color: "black" }}
                     />
                   </StyledMenuItem>
@@ -144,20 +144,17 @@ const Header = () => {
 
                 <Link to={"/orders"}>
                   <StyledMenuItem>
+                    <ListItemText primary="Orders" style={{ color: "black" }} />
+                  </StyledMenuItem>
+                </Link>
+                <Link to={"/products"}>
+                  <StyledMenuItem>
                     <ListItemText
-                      primary="My Orders"
+                      primary="Products"
                       style={{ color: "black" }}
                     />
                   </StyledMenuItem>
                 </Link>
-
-                <StyledMenuItem>
-                  <ListItemText
-                    primary="Address Book"
-                    style={{ color: "black" }}
-                  />
-                </StyledMenuItem>
-
                 <Link to={"/login"}>
                   <StyledMenuItem>
                     <ListItemText

@@ -12,6 +12,8 @@ import OrderTable from "./components/Orders/OrderTable";
 import ProductTable from "./components/Product/ProductTable";
 import SingleProduct from "./components/Product/SingleProduct";
 import AddProduct from "./components/Product/AddProduct";
+import SingleOrder from "./components/Orders/SingleOrder";
+import OrderEditTable from "./components/Orders/OrderEditTable";
 
 const drawerWidth = 240;
 
@@ -89,10 +91,11 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/customers" element={<CustomerTable />} />
-              <Route path="/orders" element={<OrderTable />} />
+              <Route path="/orders" element={<OrderEditTable />} />
               <Route path="/products" element={<ProductTable />} />
               <Route path="/addProduct" element={<AddProduct />} />
               <Route path="/products/:id" element={<SingleProduct />} />
+              <Route path="/orders/:id" element={<SingleOrder />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

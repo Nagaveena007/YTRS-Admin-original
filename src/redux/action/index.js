@@ -4,9 +4,12 @@ export const GET_PRODUCTS = "GET_PRODUCTS";
 export const ADD_PRODUCTS = "ADD_PRODUCTS";
 export const EDIT_PRODUCTS = "EDIT_PRODUCTS";
 export const DELETE_PRODUCTS = "DELETE_PRODUCTS";
+
 export const GET_ORDERS = "GET_ORDERS";
-export const PUT_ORDERS = "PUT_ORDERS";
+export const EDIT_ORDERS = "EDIT_ORDERS";
 export const DELETE_ORDERS = "DELETE_ORDERS";
+export const ADD_ORDERS = "ADD_ORDERS";
+
 export const GET_USERS = "GET_USERS";
 export const PUT_USERS = "PUT_USERS";
 export const DELETE_USERS = "DELETE_USERS";
@@ -127,13 +130,6 @@ export const deleteProductsAction = (id) => {
           payload: id,
         });
         alert("successfully deleted the product");
-        /*  <Alert onClose={() => {}}>
-          This is a success alert — check it out!
-        </Alert>; */
-        /*   <Alert severity="success">
-          <AlertTitle>Success</AlertTitle>
-          successfully deleted a product — <strong>check it out!</strong>
-        </Alert>; */
       } else {
         alert("Faild to delete Product");
       }
@@ -153,6 +149,29 @@ export const getOrdersAction = () => {
           type: GET_ORDERS,
           payload: orders,
         });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const deleteOrdersAction = (id) => {
+  return async (dispatch) => {
+    try {
+      const resp = await fetch(
+        `https://my-database-ytrs.herokuapp.com/orders/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      if (resp.ok) {
+        dispatch({
+          type: DELETE_ORDERS,
+          payload: id,
+        });
+        alert("successfully deleted the order");
+      } else {
+        alert("Faild to delete order");
       }
     } catch (error) {
       console.log(error);

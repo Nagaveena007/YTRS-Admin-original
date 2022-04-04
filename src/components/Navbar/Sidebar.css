@@ -19,7 +19,7 @@ img.logo {
   margin-right: 4.5em;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .menu__single {
   color: black;

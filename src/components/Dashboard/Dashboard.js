@@ -4,7 +4,11 @@ import ShowChartIcon from "@material-ui/icons/ShowChart";
 import GroupIcon from "@material-ui/icons/Group";
 import "./Dashboard.css";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import { getUsersAction, getProductsAction } from "../../redux/action";
+import {
+  getUsersAction,
+  getProductsAction,
+  getOrdersAction,
+} from "../../redux/action";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -34,12 +38,14 @@ Chart.register(
 );
 function Dashboard() {
   const products = useSelector((state) => state.products.productsList);
+  const orders = useSelector((state) => state.orders.ordersList);
   const users = useSelector((state) => state.users.usersList);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUsersAction());
     dispatch(getProductsAction());
+    dispatch(getOrdersAction());
   }, [dispatch]);
   console.log("users", users);
   let outOfStock = 0;
@@ -55,8 +61,8 @@ function Dashboard() {
     labels: ["Out of Stock", "InStock"],
     datasets: [
       {
-        backgroundColor: ["#00A6B4", "#6800B4"],
-        hoverBackgroundColor: ["#4B5000", "#35014F"],
+        backgroundColor: ["#222222", "#ff0000"],
+        hoverBackgroundColor: ["#b3b3b3", "#c62828"],
         data: [outOfStock, products.length - outOfStock],
       },
     ],
@@ -99,7 +105,7 @@ function Dashboard() {
                     Weekly Sales{" "}
                     <i className="mdi mdi-chart-line mdi-24px float-right"></i>
                   </h4>
-                  <h2 className="mb-5">$ 15,0000</h2>
+                  <h2 className="mb-5">€ 650</h2>
                   <h6 className="card-text">Increased by 60%</h6>
                 </div>
               </div>
@@ -115,7 +121,7 @@ function Dashboard() {
                     Weekly Orders{" "}
                     <i className="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                   </h4>
-                  <h2 className="mb-5">45,6334</h2>
+                  <h2 className="mb-5">35</h2>
                   <h6 className="card-text">Decreased by 10%</h6>
                 </div>
               </div>
@@ -131,14 +137,14 @@ function Dashboard() {
                     Visitors Online{" "}
                     <i className="mdi mdi-diamond mdi-24px float-right"></i>
                   </h4>
-                  <h2 className="mb-5">95,5741</h2>
+                  <h2 className="mb-5">45</h2>
                   <h6 className="card-text">Increased by 5%</h6>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <Row className="mt-5">
+        <Row className="mt-5 mb-5">
           <Col lg="3" sm="6">
             <Card className="card-stats">
               <Card.Body>
@@ -154,7 +160,7 @@ function Dashboard() {
               <Card.Footer>
                 <hr></hr>
                 <div className="stats d-flex justify-content-center">
-                  $568.958
+                  € 2568.958
                 </div>
               </Card.Footer>
             </Card>
@@ -173,7 +179,9 @@ function Dashboard() {
               </Card.Body>
               <Card.Footer>
                 <hr></hr>
-                <div className="stats d-flex justify-content-center">5</div>
+                <div className="stats d-flex justify-content-center">
+                  {orders.length}
+                </div>
               </Card.Footer>
             </Card>
           </Col>
