@@ -66,7 +66,7 @@ export const AccountProfileDetails = () => {
                 className="ml-2 mr-2 "
                 style={{ width: "48px", height: "50px" }}
               />
-              https://www.linkedin.com/in/nagaveena-hallikeri-3b7a42146/
+              https://www.linkedin.com/in/nagaveena-hallikeri
             </h5>
           </div>
         </div>

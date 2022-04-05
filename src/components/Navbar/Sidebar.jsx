@@ -44,6 +44,8 @@ import PeopleIcon from "@material-ui/icons/People";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import LibraryAddIcon from "@material-ui/icons/LibraryAdd";
+import logo from "../../assets/images/logo.PNG";
+
 const drawerWidth = 240;
 
 const iconName = [
@@ -189,7 +191,7 @@ const Sidebar = () => {
                 }}
               />
               <Link to={"/"}>
-                <img className="" src="/logo.PNG" style={{ width: "120px" }} />
+                <img className="" src={logo} style={{ width: "120px" }} />
 
                 {/*    <span style={{ color: "black" }}>Y-T RecipeStore</span> */}
               </Link>
@@ -231,11 +233,7 @@ const Sidebar = () => {
           </IconButton>
           <div style={{ paddingRight: "36px", paddingLeft: "12px" }}>
             <Link to={"/"}>
-              <img
-                className="mr-2"
-                src="/logo.PNG"
-                style={{ width: "120px" }}
-              />
+              <img className="mr-2" src={logo} style={{ width: "120px" }} />
               {/* <span style={{ color: "black", fontSize: "large" }}>
                 Y-T RecipeStore
               </span> */}
